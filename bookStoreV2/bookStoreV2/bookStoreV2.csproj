@@ -11,8 +11,10 @@
     <None Remove="Areas\Customer\" />
     <None Remove="Areas\Customer\Controllers\" />
     <None Remove="Areas\Customer\Views\" />
-    <None Remove="Controllers\" />
     <None Remove="Areas\Customer\Views\Home\" />
+    <None Remove="Areas\Admin\" />
+    <None Remove="Areas\Admin\Controllers\" />
+    <None Remove="Areas\Admin\Views\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -42,7 +44,9 @@
     <Folder Include="Areas\Customer\" />
     <Folder Include="Areas\Customer\Controllers\" />
     <Folder Include="Areas\Customer\Views\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Areas\Customer\Views\Home\" />
+    <Folder Include="Areas\Admin\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Views\" />
   </ItemGroup>
 </Project>
