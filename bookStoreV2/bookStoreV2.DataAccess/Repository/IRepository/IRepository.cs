@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace bookStoreV2.DataAccess.Repository.IRepository
 {
-    //kita definisikan class dengan T, krn IRepository akan dipanggil utk seluruh objek yg ada (yg disimpan sbg class Model)
+    //kita definisikan class sebagai generic Class dengan type T, krn IRepository akan dipanggil utk seluruh objek yg ada (yg disimpan sbg class Model)
     public interface IRepository<T> where T : class
     {
         //bikin utk memanggil 1 entity berdasar Id
