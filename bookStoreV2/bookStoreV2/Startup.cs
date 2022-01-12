@@ -12,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using bookStoreV2.DataAccess.Data;
+using bookStoreV2.DataAccess.Repository.IRepository;
+using bookStoreV2.DataAccess.Repository;
 
 namespace bookStoreV2
 {
@@ -34,6 +36,8 @@ namespace bookStoreV2
 
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddControllersWithViews();
         }
 
