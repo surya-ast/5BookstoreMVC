@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using bookStoreV2.DataAccess.Repository.IRepository;
+using bookStoreV2.Models;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -25,6 +26,23 @@ namespace bookStoreV2.Areas.Admin.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult Upsert(int? id)
+        {
+            Category category = new Category();
+            if (id == null)
+            {
+                //untuk create
+                return View(category);
+            }
+            // untuk update
+            category = _unitOfWork.Category.Get(id.GetValueOrDefault());
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return View(category);
         }
 
 
